@@ -1,4 +1,4 @@
-module com.example.oop_group14 {
+module com.example.oop_group {
     requires javafx.controls;
     requires javafx.fxml;
 
