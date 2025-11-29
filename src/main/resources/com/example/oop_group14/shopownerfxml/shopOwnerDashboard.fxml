@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.chart.BarChart?>
+<?import javafx.scene.chart.CategoryAxis?>
+<?import javafx.scene.chart.NumberAxis?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="544.0" prefWidth="752.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.oop_group14.shopowner.shopOwnerDashboardController">
+   <left>
+      <AnchorPane prefHeight="400.0" prefWidth="173.0" style="-fx-background-color: #6DC3BB;" BorderPane.alignment="CENTER">
+         <children>
+            <Button layoutX="24.0" layoutY="41.0" mnemonicParsing="false" onAction="#dashboardButton" prefHeight="34.0" prefWidth="119.0" text="DashBoard" />
+            <Button layoutX="24.0" layoutY="87.0" mnemonicParsing="false" onAction="#shopRegisterButton" prefHeight="34.0" prefWidth="119.0" text="Shop Register" />
+            <Button layoutX="24.0" layoutY="134.0" mnemonicParsing="false" onAction="#cleaningSchedualButton" prefHeight="34.0" prefWidth="119.0" text="Cleaning Schedual" />
+            <Button layoutX="24.0" layoutY="180.0" mnemonicParsing="false" onAction="#wasteStorageButton" prefHeight="34.0" prefWidth="119.0" text="Waste Storage" />
+            <Button layoutX="24.0" layoutY="226.0" mnemonicParsing="false" onAction="#wasteReportButton" prefHeight="34.0" prefWidth="119.0" text="Waste Report" />
+            <Button layoutX="24.0" layoutY="272.0" mnemonicParsing="false" onAction="#wastePickupButton" prefHeight="34.0" prefWidth="119.0" text="Waste Pickup " />
+            <Button layoutX="24.0" layoutY="319.0" mnemonicParsing="false" onAction="#trackDailyButton" prefHeight="34.0" prefWidth="119.0" text="Track Daily Waste" />
+            <Button layoutX="24.0" layoutY="365.0" mnemonicParsing="false" onAction="#truckSchedualButton" prefHeight="34.0" prefWidth="119.0" text="Truck Schedual" />
+            <Button layoutX="24.0" layoutY="412.0" mnemonicParsing="false" onAction="#serviceFeedBackButton" prefHeight="34.0" prefWidth="119.0" text="Service FeedBack" />
+            <Button layoutX="27.0" layoutY="495.0" mnemonicParsing="false" onAction="#logOutButton" prefHeight="34.0" prefWidth="119.0" text="Log Out" />
+         </children>
+      </AnchorPane>
+   </left>
+   <center>
+      <AnchorPane prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: #FFC69D;" BorderPane.alignment="CENTER">
+         <children>
+            <BarChart fx:id="barchart" layoutX="30.0" layoutY="22.0" prefHeight="266.0" prefWidth="517.0">
+              <xAxis>
+                <CategoryAxis side="BOTTOM" fx:id="xAxis" />
+              </xAxis>
+              <yAxis>
+                <NumberAxis fx:id="yAxis" side="LEFT" />
+              </yAxis>
+            </BarChart>
+            <TableView fx:id="tableView" layoutX="65.0" layoutY="304.0" prefHeight="200.0" prefWidth="472.0">
+              <columns>
+                <TableColumn fx:id="ownerColumn" prefWidth="91.19994354248047" text="Owner Name" />
+                <TableColumn fx:id="shopColumn" prefWidth="99.199951171875" text="Shop Name" />
+                  <TableColumn fx:id="areaColumn" prefWidth="160.0" text="Area Name" />
+                  <TableColumn fx:id="typeColumn" prefWidth="121.60006713867188" text="Waste Type" />
+              </columns>
+            </TableView>
+         </children>
+      </AnchorPane>
+   </center>
+</BorderPane>

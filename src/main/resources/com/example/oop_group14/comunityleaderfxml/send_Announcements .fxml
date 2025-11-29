@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane prefHeight="501.0" prefWidth="485.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.oop_group14.comunityleader.SendAnnouncementsController">
+   <children>
+      <Label layoutX="45.0" layoutY="39.0" prefHeight="35.0" prefWidth="163.0" text="Announcement message:" />
+      <Label layoutX="45.0" layoutY="123.0" prefHeight="35.0" prefWidth="120.0" text="Select group:" />
+      <ComboBox fx:id="selectCB" layoutX="194.0" layoutY="128.0" prefHeight="26.0" prefWidth="214.0" />
+      <TextArea fx:id="announcementTextarea" layoutX="200.0" layoutY="37.0" prefHeight="74.0" prefWidth="200.0" />
+      <Button layoutX="45.0" layoutY="168.0" mnemonicParsing="false" onAction="#sendbutton" prefHeight="26.0" prefWidth="370.0" text="Send Message" />
+      <Label layoutX="45.0" layoutY="218.0" prefHeight="18.0" prefWidth="384.0" text="                                          Show sent messages" />
+      <ListView fx:id="showlistview" layoutX="45.0" layoutY="247.0" prefHeight="200.0" prefWidth="384.0" />
+   </children>
+</AnchorPane>
