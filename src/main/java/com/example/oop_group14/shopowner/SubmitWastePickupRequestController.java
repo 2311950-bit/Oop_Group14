@@ -16,11 +16,9 @@ public class SubmitWastePickupRequestController
     @javafx.fxml.FXML
     private DatePicker dateandtimeDP;
 
-    @javafx.fxml.FXML
-    public void initialize() {
-    }
 
     @javafx.fxml.FXML
     public void submitbutton(ActionEvent actionEvent) {
+
     }
 }

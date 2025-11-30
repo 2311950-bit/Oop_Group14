@@ -25,7 +25,8 @@
             <TableColumn fx:id="datecoulmn" prefWidth="109.60003662109375" text="Date" />
         </columns>
       </TableView>
-      <TextField fx:id="messagefield" layoutX="70.0" layoutY="214.0" />
+      <TextField fx:id="search" layoutX="70.0" layoutY="214.0" />
       <Button layoutX="230.0" layoutY="214.0" mnemonicParsing="false" onAction="#searchbutton" text="Search" />
+      <Button layoutX="300.0" layoutY="214.0" mnemonicParsing="false" onAction="#resetbutton" text="Reset" />
    </children>
 </AnchorPane>

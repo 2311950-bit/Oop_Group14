@@ -2,9 +2,9 @@ package com.example.oop_group14.shopowner.Modelclass;
 
 public class Track {
     String shopName,type;
-    Float amount;
+    int amount;
 
-    public Track(String shopName, String type, Float amount) {
+    public Track(String shopName, String type, int amount) {
         this.shopName = shopName;
         this.type = type;
         this.amount = amount;
@@ -26,11 +26,11 @@ public class Track {
         this.type = type;
     }
 
-    public Float getAmount() {
+    public int getAmount() {
         return amount;
     }
 
-    public void setAmount(Float amount) {
+    public void setAmount(int amount) {
         this.amount = amount;
     }
 
@@ -43,3 +43,10 @@ public class Track {
                 '}';
     }
 }
+
+
+
+
+
+
+

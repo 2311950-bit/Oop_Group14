@@ -1,44 +1,84 @@
 package com.example.oop_group14.shopowner;
 
+import com.example.oop_group14.shopowner.Modelclass.Shop;
 import javafx.event.ActionEvent;
-import javafx.scene.control.*;
+import javafx.fxml.FXML;
+import javafx.scene.control.ComboBox;
+import javafx.scene.control.RadioButton;
+import javafx.scene.control.TextArea;
+import javafx.scene.control.TextField;
+import javafx.scene.control.ToggleGroup;
+import javafx.scene.control.cell.PropertyValueFactory;
 
-public class ShopWasteStorageSpaceController
-{
-    @javafx.fxml.FXML
-    private ComboBox containerCB;
-    @javafx.fxml.FXML
-    private TextField shopnamefield;
-    @javafx.fxml.FXML
+import java.io.*;
+import java.util.ArrayList;
+
+public class ShopWasteStorageSpaceController {
+
+    @FXML
     private TextArea commentTextarea;
-    @javafx.fxml.FXML
-    private TextField westfield;
-    @javafx.fxml.FXML
-    private RadioButton radiobuttonFull;
-    @javafx.fxml.FXML
-    private RadioButton radiobuttonHalf_Full;
-    @javafx.fxml.FXML
+
+    @FXML
+    private ComboBox<String> containerCB;
+
+    @FXML
     private RadioButton radiobuttonEmpty;
-    @javafx.fxml.FXML
+
+    @FXML
+    private RadioButton radiobuttonFull;
+
+    @FXML
+    private RadioButton radiobuttonHalf_Full;
+
+    @FXML
+    private TextField shopnamefield;
+
+    @FXML
     private ToggleGroup status;
 
-    @javafx.fxml.FXML
+    @FXML
+    private TextField westfield;
+
+    Shop shop;
+    ArrayList<Shop> shoplist = new ArrayList<>();
+
+    @FXML
     public void initialize() {
+        containerCB.getItems().addAll("Blue durm", "Metal durm", "plastic durm", "Other");
+
     }
 
-    @Deprecated
-    public void radiobuttonFull(ActionEvent actionEvent) {
+    @FXML
+    public void savebutton(ActionEvent event) {
+
+        String status = ((RadioButton) this.status.getSelectedToggle()).getText();
+
+        shop = new Shop(shopnamefield.getText(), westfield.getText(), containerCB.getValue(), status, commentTextarea.getText());
+        shoplist.add(shop);
+
+        try (BufferedWriter writer = new BufferedWriter(new FileWriter("shop.txt", true))) {
+            for (Shop shop : shoplist) {
+                writer.write(shop.getShopName() + "," + shop.getWasteStroge() + "," + shop.getContainer() + "," + shop.getStatus() + "," + shop.getComment());
+                writer.newLine();
+            }
+        } catch (IOException e) {
+            System.out.println("An error occurred while writing to the file.");
+        }
+
     }
 
-    @javafx.fxml.FXML
-    public void savebutton(ActionEvent actionEvent) {
-    }
-
-    @Deprecated
-    public void radiobuttonHalf_Full(ActionEvent actionEvent) {
-    }
-
-    @Deprecated
-    public void radiobuttonEmpty(ActionEvent actionEvent) {
-    }
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+

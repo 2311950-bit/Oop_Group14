@@ -37,8 +37,6 @@ public class ProvideServiceFeedbackController {
 
     @FXML
     void submitbutton(ActionEvent event) {
-        int rating = 0;
-
         Alert alert = new Alert(Alert.AlertType.WARNING);
         if (namefield.getText().isEmpty() || areafield.getText().isEmpty() || commenttextarea.getText().isEmpty() || radiobutton.getSelectedToggle() == null) {
             alert.setTitle("Warning");
@@ -47,21 +45,12 @@ public class ProvideServiceFeedbackController {
             return;
         }
 
-        if (radiobutton1.isSelected())
-            rating = 1;
-        else if (radiobutton2.isSelected())
-            rating = 2;
-        else if (radiobutton3.isSelected())
-            rating = 3;
-        else if (radiobutton4.isSelected())
-            rating = 4;
-        else if (radiobutton5.isSelected())
-            rating = 5;
+        String rating = ((RadioButton) radiobutton.getSelectedToggle()).getText();
 
-        provide = new Provide(namefield.getText(), areafield.getText(), rating, commenttextarea.getText());
+        provide = new Provide(namefield.getText(), areafield.getText(), Integer.parseInt(rating), commenttextarea.getText());
         provideList.add(provide);
 
-        try (ObjectOutputStream output = new ObjectOutputStream( new FileOutputStream("provide.bin"))) {
+        try (ObjectOutputStream output = new ObjectOutputStream( new FileOutputStream("provide.bin",true))) {
             output.write(provideList.size());
             for (Provide p : provideList) {
                 output.writeObject(p);

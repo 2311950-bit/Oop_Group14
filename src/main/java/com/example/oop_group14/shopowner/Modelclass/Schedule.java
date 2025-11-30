@@ -3,13 +3,13 @@ package com.example.oop_group14.shopowner.Modelclass;
 import java.time.LocalDate;
 
 public class Schedule {
-    String name ,shopName,area;
+    String name, shopName, task;
     LocalDate date;
 
-    public Schedule(String name, String shopName, String area, LocalDate date) {
+    public Schedule(String name, String shopName, String task, LocalDate date) {
         this.name = name;
         this.shopName = shopName;
-        this.area = area;
+        this.task = task;
         this.date = date;
     }
 
@@ -29,12 +29,12 @@ public class Schedule {
         this.shopName = shopName;
     }
 
-    public String getArea() {
-        return area;
+    public String getTask() {
+        return task;
     }
 
-    public void setArea(String area) {
-        this.area = area;
+    public void setTask(String task) {
+        this.task = task;
     }
 
     public LocalDate getDate() {
@@ -50,8 +50,10 @@ public class Schedule {
         return "Schedule{" +
                 "name='" + name + '\'' +
                 ", shopName='" + shopName + '\'' +
-                ", area='" + area + '\'' +
+                ", task='" + task + '\'' +
                 ", date=" + date +
                 '}';
     }
 }
+
+

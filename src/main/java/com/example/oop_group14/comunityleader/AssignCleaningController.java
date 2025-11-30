@@ -1,37 +1,73 @@
 package com.example.oop_group14.comunityleader;
 
+import com.example.oop_group14.comunityleader.Modelclass.Assign;
 import javafx.event.ActionEvent;
-import javafx.scene.control.DatePicker;
-import javafx.scene.control.TableColumn;
-import javafx.scene.control.TableView;
-import javafx.scene.control.TextField;
+import javafx.fxml.FXML;
+import javafx.scene.control.*;
+import javafx.scene.control.cell.PropertyValueFactory;
 
-public class AssignCleaningController
-{
-    @javafx.fxml.FXML
-    private TextField areafield1;
-    @javafx.fxml.FXML
+import java.util.ArrayList;
+
+public class AssignCleaningController {
+
+    @FXML
+    private TableColumn<Assign,String> areacoulmn;
+
+    @FXML
     private TextField areafield;
-    @javafx.fxml.FXML
-    private TextField namefield;
-    @javafx.fxml.FXML
+
+    @FXML
+    private TextField areafield1;
+
+    @FXML
     private DatePicker dateDP;
-    @javafx.fxml.FXML
-    private TableColumn areacoulmn;
-    @javafx.fxml.FXML
-    private TableColumn taskcoulmn;
-    @javafx.fxml.FXML
-    private TableColumn namecoulmn;
-    @javafx.fxml.FXML
-    private TableColumn datecoulmn;
-    @javafx.fxml.FXML
-    private TableView tableinfo;
 
-    @javafx.fxml.FXML
-    public void initialize() {
+    @FXML
+    private TableColumn<Assign,String> datecoulmn;
+
+    @FXML
+    private TableColumn<Assign,String> namecoulmn;
+
+    @FXML
+    private TextField namefield;
+
+    @FXML
+    private TableView<Assign> tableinfo;
+
+    @FXML
+    private TableColumn<Assign,String> taskcoulmn;
+
+    Assign assign;
+    ArrayList <Assign> assignlist = new ArrayList<>();
+
+    @FXML
+    public void initialize(){
+        areacoulmn.setCellValueFactory(new PropertyValueFactory<>("area"));
+        datecoulmn.setCellValueFactory(new PropertyValueFactory<>("date"));
+        namecoulmn.setCellValueFactory(new PropertyValueFactory<>("name"));
+        taskcoulmn.setCellValueFactory(new PropertyValueFactory<>("task"));
+
     }
 
-    @javafx.fxml.FXML
-    public void assignbutton(ActionEvent actionEvent) {
-    }
+    @FXML
+    void assignbutton(ActionEvent event) {
+
+        Alert alert = new Alert(Alert.AlertType.WARNING);
+        if(areafield.getText().isEmpty()||areafield1.getText().isEmpty()||namefield.getText().isEmpty()||dateDP.getValue()==null) {
+            alert.setContentText("Please fill all the fields");
+            alert.showAndWait();
+            return;
+        }
+
+
+            assign = new Assign(namefield.getText(), areafield.getText(), areafield1.getText(), dateDP.getValue());
+            tableinfo.getItems().add(assign);
+            assignlist.add(assign);
+
+            areafield.clear();
+            areafield1.clear();
+            namefield.clear();
+            dateDP.setValue(null);
+
+        }
 }

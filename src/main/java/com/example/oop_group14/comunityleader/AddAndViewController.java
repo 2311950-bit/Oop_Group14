@@ -1,32 +1,67 @@
 package com.example.oop_group14.comunityleader;
 
+import com.example.oop_group14.comunityleader.Modelclass.AddandView;
 import javafx.event.ActionEvent;
+import javafx.fxml.FXML;
+import javafx.scene.control.Alert;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.TextField;
+import javafx.scene.control.cell.PropertyValueFactory;
 
-public class AddAndViewController
-{
-    @javafx.fxml.FXML
-    private TextField remarksfield;
-    @javafx.fxml.FXML
+import java.util.ArrayList;
+
+public class AddAndViewController {
+
+    @FXML
     private TextField areafield;
-    @javafx.fxml.FXML
+
+    @FXML
+    private TableColumn<AddandView, String> namecoulmn;
+
+    @FXML
+    private TableColumn<AddandView, String> remarkscoulmn;
+
+    @FXML
+    private TextField remarksfield;
+
+    @FXML
+    private TableView<AddandView> tableinfo;
+
+    @FXML
+    private TableColumn<AddandView, String> wastekgcoulmn;
+
+    @FXML
     private TextField westkgfield;
-    @javafx.fxml.FXML
-    private TableColumn wastekgcoulmn;
-    @javafx.fxml.FXML
-    private TableColumn namecoulmn;
-    @javafx.fxml.FXML
-    private TableColumn remarkscoulmn;
-    @javafx.fxml.FXML
-    private TableView tableinfo;
 
-    @javafx.fxml.FXML
-    public void initialize() {
+    AddandView addandview ;
+    ArrayList <AddandView> addandViewlist = new ArrayList<>();
+
+    @FXML
+    public void initialize(){
+        namecoulmn.setCellValueFactory(new PropertyValueFactory<>("areaName"));
+        wastekgcoulmn.setCellValueFactory(new PropertyValueFactory<>("wasteKG"));
+        remarkscoulmn.setCellValueFactory(new PropertyValueFactory<>("remarks"));
+
     }
 
-    @javafx.fxml.FXML
-    public void savebutton(ActionEvent actionEvent) {
+    @FXML
+    void savebutton(ActionEvent event) {
+
+        Alert aleart = new Alert(Alert.AlertType.WARNING);
+        if(areafield.getText().isEmpty() || remarksfield.getText().isEmpty() || westkgfield.getText().isEmpty()){
+            aleart.setContentText("Please fill all the fields");
+            aleart.showAndWait();
+            return;
+        }
+        addandview = new AddandView(areafield.getText(),remarksfield.getText(),Integer.parseInt(westkgfield.getText()));
+        tableinfo.getItems().add(addandview);
+        addandViewlist.add(addandview);
+
+        areafield.clear();
+        remarksfield.clear();
+        westkgfield.clear();
+
     }
+
 }
