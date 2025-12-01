@@ -6,6 +6,7 @@
 <?import javafx.scene.control.TableColumn?>
 <?import javafx.scene.control.TableView?>
 <?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.ToggleGroup?>
 <?import javafx.scene.layout.AnchorPane?>
 
 <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="498.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.oop_group14.comunityleader.manageCommunityCompostingControllerController">
@@ -14,8 +15,11 @@
       <TextField fx:id="areaField" layoutX="131.0" layoutY="27.0" />
       <Label layoutX="39.0" layoutY="74.0" text="Resident Name:" />
       <TextField fx:id="nameField" layoutX="131.0" layoutY="70.0" />
-      <RadioButton fx:id="doesRB" layoutX="131.0" layoutY="124.0" mnemonicParsing="false" text="Does have Composit Bin " />
-      <RadioButton fx:id="doesntRB" layoutX="300.0" layoutY="124.0" mnemonicParsing="false" text="Doesn't Have Composit Bin " />
+      <RadioButton fx:id="doesRB" layoutX="131.0" layoutY="124.0" mnemonicParsing="false" text="Does have Composit Bin ">
+         <toggleGroup>
+            <ToggleGroup fx:id="compositbin" />
+         </toggleGroup></RadioButton>
+      <RadioButton fx:id="doesntRB" layoutX="300.0" layoutY="124.0" mnemonicParsing="false" text="Doesn't Have Composit Bin " toggleGroup="$compositbin" />
       <Button layoutX="241.0" layoutY="174.0" mnemonicParsing="false" onAction="#saveButton" text="Save Details" />
       <TableView fx:id="tableinfo" layoutX="31.0" layoutY="249.0" prefHeight="200.0" prefWidth="525.0">
         <columns>

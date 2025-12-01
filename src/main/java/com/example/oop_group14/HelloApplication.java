@@ -9,8 +9,8 @@ import java.io.IOException;
 
 public class HelloApplication extends Application {
     @Override
-    public void start(Stage stage) throws IOException {                                 // "/com/example/oop_group14/comunityleaderfdsdfdxml/add_and_View.fxml"
-        FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("/com/example/oop_group14/shopownerfxml/Shop_Waste_Storage_Space.fxml"));
+    public void start(Stage stage) throws IOException {                                 // "/com/example/oop_group14/comunityleaderfdsdfdxml shopownerfxml/add_and_View.fxml"
+        FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("/com/example/oop_group14/shopownerfxml/Submit_Waste_Pickup_Request.fxml"));
         Scene scene = new Scene(fxmlLoader.load());
         stage.setTitle("Hello!");
         stage.setScene(scene);

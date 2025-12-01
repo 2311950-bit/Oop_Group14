@@ -3,11 +3,7 @@ package com.example.oop_group14.shopowner;
 import com.example.oop_group14.shopowner.Modelclass.Shop;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
-import javafx.scene.control.ComboBox;
-import javafx.scene.control.RadioButton;
-import javafx.scene.control.TextArea;
-import javafx.scene.control.TextField;
-import javafx.scene.control.ToggleGroup;
+import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
 
 import java.io.*;
@@ -60,6 +56,12 @@ public class ShopWasteStorageSpaceController {
             for (Shop shop : shoplist) {
                 writer.write(shop.getShopName() + "," + shop.getWasteStroge() + "," + shop.getContainer() + "," + shop.getStatus() + "," + shop.getComment());
                 writer.newLine();
+
+                Alert success = new Alert(Alert.AlertType.INFORMATION);
+                success.setTitle("Success");
+                success.setHeaderText("Request Submitted Successfully!");
+                success.setContentText("Your waste pickup request has been saved properly.");
+                success.showAndWait();
             }
         } catch (IOException e) {
             System.out.println("An error occurred while writing to the file.");
