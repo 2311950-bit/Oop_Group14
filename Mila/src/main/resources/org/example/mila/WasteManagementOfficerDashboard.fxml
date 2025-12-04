@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.control.DatePicker?>
+
+<VBox alignment="TOP_LEFT" prefHeight="700.0" prefWidth="900.0" spacing="20.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.example.mila.WasteManagementOfficerController">
+    <padding>
+        <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
+    </padding>
+    <Label text="Waste Management Officer Dashboard">
+        <font>
+            <Font name="System Bold" size="24.0" />
+        </font>
+    </Label>
+
+    <HBox alignment="TOP_LEFT" spacing="20.0">
+        <VBox spacing="10.0" prefWidth="350.0" style="-fx-border-color: #ccc; -fx-padding: 15;">
+            <Label style="-fx-font-weight: bold;" text="🚚 Goal 1: Truck Tracking" />
+            <Button onAction="#handleTrackTrucks" text="Refresh Truck Status" />
+            <TextArea fx:id="truckStatusArea" editable="false" prefHeight="150.0" promptText="Truck status and location..." />
+
+            <Label style="-fx-font-weight: bold; -fx-padding: 10 0 0 0;" text="🗺️ Goal 2: Assign Route" />
+            <ComboBox fx:id="truckIdCombo" promptText="Select Truck ID" prefWidth="200.0" />
+            <TextField fx:id="routeNameField" promptText="Route Name (e.g., Downtown Loop)" />
+            <TextField fx:id="startLocField" promptText="Start Location" />
+            <TextField fx:id="endLocField" promptText="End Location" />
+            <Button onAction="#handleAssignRoute" text="Assign Route" />
+            <Label fx:id="routeMessageLabel" style="-fx-text-fill: blue;" wrapText="true" />
+        </VBox>
+
+        <VBox spacing="10.0" prefWidth="350.0" style="-fx-border-color: #ccc; -fx-padding: 15;">
+            <Label style="-fx-font-weight: bold;" text="🗓️ Goal 3: Schedule Worker Shifts" />
+            <TextField fx:id="workerIdField" promptText="Worker ID (e.g., W001)" />
+            <TextField fx:id="shiftNameField" promptText="Shift Name (e.g., Night Shift)" />
+            <HBox spacing="5">
+                <DatePicker fx:id="shiftDatePicker" promptText="Shift Date" prefWidth="150"/>
+                <TextField fx:id="startTimeField" promptText="Start Time (HH:MM)" prefWidth="100"/>
+                <TextField fx:id="endTimeField" promptText="End Time (HH:MM)" prefWidth="100"/>
+            </HBox>
+            <Button onAction="#handleScheduleShift" text="Schedule Shift" />
+            <Label fx:id="shiftMessageLabel" style="-fx-text-fill: blue;" wrapText="true" />
+            <TextArea fx:id="scheduleArea" editable="false" prefHeight="150.0" promptText="Current worker schedule..." />
+        </VBox>
+    </HBox>
+
+    <VBox spacing="10.0" prefWidth="720.0" style="-fx-border-color: #ccc; -fx-padding: 15;">
+        <Label style="-fx-font-weight: bold;" text="🚨 Goal 6: Handle Citizen Complaints" />
+        <Button onAction="#handleLoadComplaints" text="Load Pending Complaints" />
+        <ComboBox fx:id="complaintIdCombo" promptText="Select Complaint ID" prefWidth="200.0" />
+        <HBox spacing="10.0">
+            <ComboBox fx:id="statusCombo" promptText="New Status" prefWidth="150.0" />
+            <TextField fx:id="resolutionField" promptText="Resolution Summary" HBox.hgrow="ALWAYS" />
+        </HBox>
+        <Button onAction="#handleUpdateComplaintStatus" text="Update Complaint Status" />
+        <Label fx:id="complaintMessageLabel" style="-fx-text-fill: blue;" wrapText="true" />
+        <TextArea fx:id="complaintDetailsArea" editable="false" prefHeight="100.0" promptText="Details of selected complaint..." />
+    </VBox>
+
+    <Button onAction="#handleLogout" text="Logout" style="-fx-background-color: #ff6666;" textFill="WHITE"/>
+</VBox>

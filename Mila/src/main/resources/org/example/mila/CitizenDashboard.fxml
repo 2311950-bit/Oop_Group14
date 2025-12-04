@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.TilePane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<VBox alignment="TOP_CENTER" prefHeight="600.0" prefWidth="800.0" spacing="20.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.example.mila.CitizenController">
+    <padding>
+        <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
+    </padding>
+
+    <Label text="Citizen Dashboard">
+        <font>
+            <Font name="System Bold" size="24.0" />
+        </font>
+    </Label>
+
+    <TilePane alignment="CENTER" hgap="15.0" vgap="15.0" prefColumns="4">
+        <Button onAction="#garbagePickupOA" text="1. View My Bill" prefHeight="80.0" prefWidth="150.0" />
+        <Button onAction="#OnlinePaymentOA" text="5. Pay Fees Online" prefHeight="80.0" prefWidth="150.0" />
+        <Button onAction="#TruckTrackingOA" text="2. Track Truck Arrival" prefHeight="80.0" prefWidth="150.0" />
+        <Button onAction="#UncollectedGarbageOA" text="3. Report Uncollected Garbage" prefHeight="80.0" prefWidth="150.0" />
+        <Button onAction="#recyclingGuidelinesOA" text="4. View Recycling Guidelines" prefHeight="80.0" prefWidth="150.0" />
+        <Button onAction="#cleanlinessFeedbackOA" text="6. Give Cleanliness Feedback" prefHeight="80.0" prefWidth="150.0" />
+        <Button onAction="#ComplaintSOA" text="8. View Complaint Status" prefHeight="80.0" prefWidth="150.0" />
+    </TilePane>
+
+    <Button onAction="#logoutOA" text="Logout" style="-fx-background-color: #ff6666;" textFill="WHITE">
+        <VBox.margin>
+            <Insets top="30.0" />
+        </VBox.margin>
+    </Button>
+</VBox>
