@@ -1,4 +1,4 @@
-package org.example.mila;
+package com.example.oop_group14.Mila;
 
 import java.time.LocalDateTime;
 import java.util.ArrayList;

@@ -1,4 +1,4 @@
-package org.example.mila;
+package com.example.oop_group14.Mila;
 
 import javafx.application.Platform;
 import javafx.collections.FXCollections;

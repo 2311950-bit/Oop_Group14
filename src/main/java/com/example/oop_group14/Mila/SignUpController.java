@@ -1,4 +1,4 @@
-package org.example.mila;
+package com.example.oop_group14.Mila;
 
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;

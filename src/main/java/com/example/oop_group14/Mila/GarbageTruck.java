@@ -1,4 +1,4 @@
-package org.example.mila;
+package com.example.oop_group14.Mila;
 
 public class GarbageTruck {
     private final String truckId;
