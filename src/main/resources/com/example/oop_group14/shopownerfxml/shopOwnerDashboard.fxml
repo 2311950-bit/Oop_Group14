@@ -9,7 +9,7 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.BorderPane?>
 
-<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="544.0" prefWidth="752.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.oop_group14.shopowner.shopOwnerDashboardController">
+<BorderPane fx:id="borderPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="544.0" prefWidth="752.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.oop_group14.shopowner.shopOwnerDashboardController">
    <left>
       <AnchorPane prefHeight="400.0" prefWidth="173.0" style="-fx-background-color: #6DC3BB;" BorderPane.alignment="CENTER">
          <children>
@@ -27,7 +27,7 @@
       </AnchorPane>
    </left>
    <center>
-      <AnchorPane prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: #FFC69D;" BorderPane.alignment="CENTER">
+      <AnchorPane fx:id="centeralPane" prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: #FFC69D;" BorderPane.alignment="CENTER">
          <children>
             <BarChart fx:id="barchart" layoutX="30.0" layoutY="22.0" prefHeight="266.0" prefWidth="517.0">
               <xAxis>

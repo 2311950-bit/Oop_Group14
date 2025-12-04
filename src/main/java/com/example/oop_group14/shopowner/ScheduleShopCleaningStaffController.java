@@ -6,6 +6,7 @@ import javafx.fxml.FXML;
 import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
 
+import java.time.LocalDate;
 import java.util.ArrayList;
 
 public class ScheduleShopCleaningStaffController {
@@ -62,11 +63,15 @@ public class ScheduleShopCleaningStaffController {
             alert.setContentText("Please fill all the fields");
             alert.showAndWait();
             return;
-
         }
 
-
-
+        LocalDate date = dateDP.getValue();
+        if (date.isBefore(LocalDate.now())) {
+            alert.setTitle("WARNING");
+            alert.setContentText("Please select a valid date");
+            alert.showAndWait();
+            return;
+        }
 
         schedule = new Schedule(staffnamefield.getText() , shopnamefield.getText(), taskCB.getValue(), dateDP.getValue());
         array.add(schedule);

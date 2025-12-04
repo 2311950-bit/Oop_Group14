@@ -1,11 +1,22 @@
 package com.example.oop_group14.shopowner;
 
+import com.example.oop_group14.HelloApplication;
 import javafx.event.ActionEvent;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Node;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.scene.chart.BarChart;
 import javafx.scene.chart.CategoryAxis;
 import javafx.scene.chart.NumberAxis;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
+import javafx.scene.layout.AnchorPane;
+import javafx.scene.layout.BorderPane;
+import javafx.stage.Stage;
+
+import java.io.IOException;
+import java.util.Objects;
 
 public class shopOwnerDashboardController
 {
@@ -25,6 +36,10 @@ public class shopOwnerDashboardController
     private TableColumn ownerColumn;
     @javafx.fxml.FXML
     private TableColumn typeColumn;
+    @javafx.fxml.FXML
+    private BorderPane borderPane;
+    @javafx.fxml.FXML
+    private AnchorPane centeralPane;
 
     @javafx.fxml.FXML
     public void initialize() {
@@ -32,14 +47,23 @@ public class shopOwnerDashboardController
 
     @javafx.fxml.FXML
     public void wastePickupButton(ActionEvent actionEvent) {
+        try {
+            Parent root = FXMLLoader.load(Objects.requireNonNull(HelloApplication.class.getResource("/com/example/oop_group14/shopownerfxml/Track_Daily_West_Output.fxml")));
+            borderPane.setCenter(root);
+        } catch (IOException ignored) {}
     }
 
     @javafx.fxml.FXML
     public void dashboardButton(ActionEvent actionEvent) {
+        borderPane.setCenter(centeralPane);
     }
 
     @javafx.fxml.FXML
     public void shopRegisterButton(ActionEvent actionEvent) {
+        try {
+            Parent root = FXMLLoader.load(Objects.requireNonNull(HelloApplication.class.getResource("/com/example/oop_group14/shopownerfxml/Register_Shop_Information.fxml")));
+            borderPane.setCenter(root);
+        } catch (IOException ignored) {}
     }
 
     @javafx.fxml.FXML

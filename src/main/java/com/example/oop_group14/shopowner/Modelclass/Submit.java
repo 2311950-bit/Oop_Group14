@@ -1,8 +1,9 @@
 package com.example.oop_group14.shopowner.Modelclass;
 
+import java.io.Serializable;
 import java.time.LocalDate;
 
-public class Submit {
+public class Submit implements Serializable {
     String shopName,area,comment;
     LocalDate date;
 

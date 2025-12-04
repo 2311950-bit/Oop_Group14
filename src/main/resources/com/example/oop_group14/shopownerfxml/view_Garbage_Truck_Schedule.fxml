@@ -8,14 +8,16 @@
 
 <AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.oop_group14.shopowner.ViewGarbageTruckScheduleController">
    <children>
-      <TableView fx:id="tableinfo" layoutX="54.0" layoutY="95.0" prefHeight="275.0" prefWidth="370.0">
+      <TableView fx:id="tableinfo" layoutX="31.0" layoutY="55.0" prefHeight="275.0" prefWidth="478.0">
         <columns>
-          <TableColumn fx:id="areacoulmn" prefWidth="254.39997100830078" text="Area" />
-          <TableColumn fx:id="timecoulmn" prefWidth="116.0" text="Time" />
+          <TableColumn fx:id="shopNameColumn" prefWidth="117.60003662109375" text="Shop Name" />
+          <TableColumn fx:id="areaColumn" prefWidth="118.39996337890625" text="Area" />
+            <TableColumn fx:id="commentColumn" prefWidth="129.60003662109375" text="Comment" />
+            <TableColumn fx:id="dateColumn" prefWidth="111.19998779296873" text="Date" />
         </columns>
       </TableView>
       <Button layoutX="451.0" layoutY="345.0" mnemonicParsing="false" onAction="#loadbutton" prefHeight="26.0" prefWidth="126.0" text="Load Schedule" />
-      <ComboBox fx:id="optionCB" layoutX="54.0" layoutY="56.0" prefWidth="150.0" />
-      <Button layoutX="224.0" layoutY="56.0" mnemonicParsing="false" onAction="#filterButton" text="Filter" />
+      <ComboBox fx:id="optionCB" layoutX="31.0" layoutY="16.0" prefWidth="150.0" />
+      <Button layoutX="201.0" layoutY="16.0" mnemonicParsing="false" onAction="#filterButton" text="Filter" />
    </children>
 </AnchorPane>
