@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.chart.BarChart?>
+<?import javafx.scene.chart.CategoryAxis?>
+<?import javafx.scene.chart.NumberAxis?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+
+<BorderPane fx:id="borderPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="544.0" prefWidth="752.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.oop_group14.comunityleader.ComunityleaderDashBoardController">
+    <left>
+        <AnchorPane prefHeight="400.0" prefWidth="173.0" style="-fx-background-color: #6DC3BB;" BorderPane.alignment="CENTER">
+            <children>
+                <Button layoutX="24.0" layoutY="41.0" mnemonicParsing="false" onAction="#dashboardButton" prefHeight="34.0" prefWidth="119.0" text="DashBoard" />
+                <Button layoutX="24.0" layoutY="87.0" mnemonicParsing="false" onAction="#addAndViewButton" prefHeight="34.0" prefWidth="119.0" text="Add &amp; View" />
+                <Button layoutX="24.0" layoutY="134.0" mnemonicParsing="false" onAction="#assignCleaningButton" prefHeight="34.0" prefWidth="119.0" text="Assign Cleaning" />
+                <Button layoutX="24.0" layoutY="180.0" mnemonicParsing="false" onAction="#weeklySummaryButton" prefHeight="34.0" prefWidth="119.0" text="Weekly Summary" />
+                <Button layoutX="24.0" layoutY="226.0" mnemonicParsing="false" onAction="#manageComunityButton" prefHeight="34.0" prefWidth="119.0" text="Manage Comunity" />
+                <Button layoutX="24.0" layoutY="272.0" mnemonicParsing="false" onAction="#rateSenitationButton" prefHeight="34.0" prefWidth="119.0" text="Rate Senitation" />
+                <Button layoutX="24.0" layoutY="319.0" mnemonicParsing="false" onAction="#requestExtraButton" prefHeight="34.0" prefWidth="119.0" text="Request Extra" />
+                <Button layoutX="24.0" layoutY="365.0" mnemonicParsing="false" onAction="#announcementButton" prefHeight="34.0" prefWidth="119.0" text="Announcement" />
+                <Button layoutX="24.0" layoutY="412.0" mnemonicParsing="false" onAction="#viewComplainsButton" prefHeight="34.0" prefWidth="119.0" text="View Complains" />
+                <Button layoutX="27.0" layoutY="495.0" mnemonicParsing="false" onAction="#logOutButton" prefHeight="34.0" prefWidth="119.0" text="Log Out" />
+            </children>
+        </AnchorPane>
+    </left>
+    <center>
+        <AnchorPane fx:id="centeralPane" prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: #FFC69D;" BorderPane.alignment="CENTER">
+            <children>
+                <BarChart fx:id="barchart" layoutX="30.0" layoutY="22.0" prefHeight="266.0" prefWidth="517.0">
+                    <xAxis>
+                        <CategoryAxis side="BOTTOM" fx:id="xAxis" />
+                    </xAxis>
+                    <yAxis>
+                        <NumberAxis fx:id="yAxis" side="LEFT" />
+                    </yAxis>
+                </BarChart>
+                <TableView fx:id="tableView" layoutX="65.0" layoutY="304.0" prefHeight="200.0" prefWidth="472.0">
+                    <columns>
+                        <TableColumn fx:id="areaNameColumn" prefWidth="91.19994354248047" text="Area Name" />
+                        <TableColumn fx:id="collectedWasteColumn" prefWidth="268.79998779296875" text="Collected Waste (KG)" />
+                        <TableColumn fx:id="remarksColumn" prefWidth="112.00009155273438" text="Remarks" />
+                    </columns>
+                </TableView>
+            </children>
+        </AnchorPane>
+    </center>
+</BorderPane>
