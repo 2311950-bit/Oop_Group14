@@ -1,6 +1,5 @@
 package com.example.oop_group14.Mila;
 
-import com.example.oop_group14.HelloApplication;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;

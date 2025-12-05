@@ -1,6 +1,5 @@
 package com.example.oop_group14.Mila;
 
-import com.example.oop_group14.HelloApplication;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -49,8 +48,7 @@ public class CitizenController {
 
 
     @FXML public void garbagePickupOA(ActionEvent actionEvent) {
-        String billInfo = String.format("Billing Information (User ID: %d)\n\nPrevious Balance: $15.00\nCurrent Charges: $10.00 (Standard monthly fee)\nDue Date: 2026-01-01\n\nStatus: Pending", loggedInUserId);
-        showAlert(AlertType.INFORMATION, "View Bill", "Garbage Collection Bill", billInfo);
+        switchScene(actionEvent, "ViewMYBill.fxml", "My Bill");
     }
 
     @FXML public void TruckTrackingOA(ActionEvent actionEvent) {
@@ -60,14 +58,7 @@ public class CitizenController {
     }
 
     @FXML public void UncollectedGarbageOA(ActionEvent actionEvent) {
-        Complaint newComplaint = service.submitNewComplaint(
-                loggedInUserId,
-                "Uncollected Garbage",
-                "My recycling bin was missed today.",
-                "Road 10, House 5"
-        );
-        showAlert(AlertType.INFORMATION, "Complaint Submitted", "Report Successful",
-                "Your report of uncollected garbage has been submitted.\nComplaint ID: " + newComplaint.getComplaintId() + "\nStatus: " + newComplaint.getStatus());
+        switchScene(actionEvent, "reportUncollectedGarbage.fxml", "Report Uncollected Garbage");
     }
 
     @FXML public void recyclingGuidelinesOA(ActionEvent actionEvent) {
@@ -76,28 +67,16 @@ public class CitizenController {
     }
 
     @FXML public void OnlinePaymentOA(ActionEvent actionEvent) {
-        String payment = "Payment of $10.00 was successful.\nTransaction ID: 789456.\nThank you for your payment.";
-        showAlert(AlertType.CONFIRMATION, "Make Payment", "Online Payment", payment);
+        switchScene(actionEvent, "PayFeesOnline.fxml", "View Payment");
+
     }
 
     @FXML public void cleanlinessFeedbackOA(ActionEvent actionEvent) {
-        String sampleFeedback = "The waste collection service has been very punctual this month.";
-        service.submitFeedback(sampleFeedback);
-        showAlert(AlertType.INFORMATION, "Feedback Submitted", "Thank You",
-                "Your feedback ('" + sampleFeedback + "') has been recorded!");
+        switchScene(actionEvent, "GiveCleanlinessFeedback.fxml", "CleanlinessFeedback");
     }
 
     @FXML public void ComplaintSOA(ActionEvent actionEvent) {
-        List<Complaint> myComplaints = service.getCitizenComplaints(loggedInUserId);
-        StringBuilder sb = new StringBuilder("--- Your Complaint History ---\n");
-        if (myComplaints.isEmpty()) {
-            sb.append("No complaints found.");
-        } else {
-            myComplaints.forEach(c ->
-                    sb.append(String.format("ID: %d | Category: %s | Status: %s\n", c.getComplaintId(), c.getCategory(), c.getStatus()))
-            );
-        }
-        showAlert(AlertType.INFORMATION, "Complaint Status", "Viewing Your Submissions", sb.toString());
+        switchScene(actionEvent, "ViewComplaintStatus.fxml", "Complaint Status");
     }
 
     @FXML public void logoutOA(ActionEvent actionEvent) {
